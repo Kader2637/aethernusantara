@@ -234,7 +234,7 @@ export default function JasaWebPage() {
                                                 {formatPrice(svc.price)}
                                             </p>
                                         </div>
-                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isDark ? 'bg-white/10 text-white group-hover:bg-brand-500' : 'bg-slate-50 text-slate-400 group-hover:bg-brand-500 group-hover:text-white'}`}>
+                                        <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors ${isDark ? 'bg-white/10 text-white group-hover:bg-brand-500' : 'bg-slate-50 text-slate-400 group-hover:bg-brand-500 group-hover:text-black'}`}>
                                             <svg className="w-5 h-5 -rotate-45 group-hover:rotate-0 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                         </div>
                                     </div>
