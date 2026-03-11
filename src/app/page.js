@@ -299,27 +299,27 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
-                title: "Web Development", tag: "TECH", href: "/jasa-web", desc: "Website kustom, Landing Page, hingga Web Apps yang responsif dan super cepat.", icon: (
+                title: "Web Development", tag: "TECH", href: "/jasa/web", desc: "Website kustom, Landing Page, hingga Web Apps yang responsif dan super cepat.", icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9-9H3m9 9a9 9 0 01-9-9m9 9c0 6.903-5.097 12.5-11.375 12.5M3 12h18"></path></svg>
                 )
               },
               {
-                title: "UI/UX Design", tag: "DESIGN", href: "/jasa-uiux", desc: "Antarmuka modern dengan pengalaman pengguna yang intuitif dan interaktif di Figma.", icon: (
+                title: "UI/UX Design", tag: "DESIGN", href: "/jasa/uiux", desc: "Antarmuka modern dengan pengalaman pengguna yang intuitif dan interaktif di Figma.", icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                 )
               },
               {
-                title: "Video Production", tag: "MEDIA", href: "/jasa-video", desc: "Editing konten cinematic untuk brand awareness, reels, hingga iklan produk premium.", icon: (
+                title: "Video Production", tag: "MEDIA", href: "/jasa/video", desc: "Editing konten cinematic untuk brand awareness, reels, hingga iklan produk premium.", icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
                 )
               },
               {
-                title: "PPT Presentation", tag: "BUSINESS", href: "/jasa-ppt", desc: "Slide premium untuk kebutuhan pitching investor, seminar, dan presentasi bisnis.", icon: (
+                title: "PPT Presentation", tag: "BUSINESS", href: "/jasa/ppt", desc: "Slide premium untuk kebutuhan pitching investor, seminar, dan presentasi bisnis.", icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 2v-6m-8 13h10a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                 )
               },
               {
-                title: "Document Service", tag: "ADMIN", href: "/jasa-dokumen", desc: "Pengolahan data, penulisan laporan, dan administrasi dokumen profesional.", icon: (
+                title: "Document Service", tag: "ADMIN", href: "/jasa/dokumen", desc: "Pengolahan data, penulisan laporan, dan administrasi dokumen profesional.", icon: (
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                 )
               }
