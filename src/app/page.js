@@ -637,7 +637,7 @@ export default function Home() {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
             <Link
-              href="https://wa.me/yournumber"
+              href="https://wa.me/6281238193238"
               className="group relative w-full md:w-auto px-12 py-6 bg-slate-900 text-white font-black uppercase tracking-[0.2em] text-[11px] overflow-hidden rounded-none hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] transition-all duration-500 text-center"
             >
               <div className="absolute inset-0 bg-brand-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
