@@ -3,9 +3,65 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Typewriter from 'typewriter-effect';
+import { motion } from 'framer-motion';
 
 export default function Home() {
   const [heroTyped, setHeroTyped] = useState("");
+  const toolsRow1 = [
+    { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg", url: "https://react.dev" },
+    { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg", url: "https://nextjs.org" },
+    { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg", url: "https://vuejs.org" },
+    { name: "Angular", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg", url: "https://angular.io" },
+    { name: "Svelte", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg", url: "https://svelte.dev" },
+    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg", url: "https://www.typescriptlang.org" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg", url: "https://www.python.org" },
+    { name: "Go", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg", url: "https://go.dev" },
+    { name: "Rust", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg", url: "https://www.rust-lang.org" },
+    { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg", url: "https://www.java.com" },
+    { name: "Kotlin", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg", url: "https://kotlinlang.org" },
+    { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flutter/flutter-original.svg", url: "https://flutter.dev" },
+    { name: "Tailwind", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg", url: "https://tailwindcss.com" },
+  ];
+
+  const toolsRow2 = [
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg", url: "https://nodejs.org" },
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg", url: "https://www.mongodb.com" },
+    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg", url: "https://www.postgresql.org" },
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg", url: "https://www.mysql.com" },
+    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg", url: "https://www.docker.com" },
+    { name: "Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-plain.svg", url: "https://kubernetes.io" },
+    { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg", url: "https://aws.amazon.com" },
+    { name: "Google Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg", url: "https://cloud.google.com" },
+    { name: "Firebase", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg", url: "https://firebase.google.com" },
+    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg", url: "https://github.com" },
+    { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg", url: "https://www.figma.com" },
+    { name: "Premiere Pro", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg", url: "https://www.adobe.com/products/premiere.html" },
+    { name: "After Effects", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg", url: "https://www.adobe.com/products/aftereffects.html" },
+    { name: "Illustrator", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg", url: "https://www.adobe.com/products/illustrator.html" },
+  ];
+
+  const ToolItem = ({ item }) => (
+    <a
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      // Tambahin 'shrink-0' di sini biar card nggak gepeng di layar kecil
+      className="shrink-0 flex items-center gap-3 md:gap-4 px-4 py-2.5 md:px-6 md:py-4 bg-white border border-slate-100 shadow-[0_4px_15px_rgba(0,0,0,0.03)] rounded-xl md:rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-[0_15px_30px_-10px_rgba(0,0,0,0.1)] hover:border-brand-200 group cursor-pointer"
+      title={`Kunjungi web resmi ${item.name}`}
+    >
+      <img
+        src={item.icon}
+        alt={item.name}
+        // Tambahin 'shrink-0' juga di gambar biar logonya nggak penyok
+        className="shrink-0 w-6 h-6 md:w-8 md:h-8 object-contain transition-transform duration-300 group-hover:-translate-y-1"
+      />
+      <span className="text-[10px] md:text-xs font-black text-slate-500 group-hover:text-brand-600 uppercase tracking-widest transition-colors duration-300 whitespace-nowrap">
+        {item.name}
+      </span>
+    </a>
+  );
 
   useEffect(() => {
     AOS.init({ once: false, mirror: true, offset: 50, duration: 800 });
@@ -32,197 +88,175 @@ export default function Home() {
   return (
     <main>
       {/* HERO SECTION */}
-      <section id="home" className="relative min-h-screen flex items-center bg-white overflow-hidden pt-32 pb-20 md:pt-52 md:pb-32">
+      <section id="home" className="relative flex flex-col items-center bg-white overflow-x-hidden min-h-fit lg:min-h-screen">
+        <div className="relative w-full flex-none lg:flex-1 flex flex-col items-center justify-start lg:justify-center pt-24 pb-0 lg:pt-0 lg:pb-0 lg:min-h-screen z-10">
 
-        {/* BACKGROUND TEXT ANIMATION (MARQUEE) */}
-        <div className="absolute inset-0 flex flex-col justify-center pointer-events-none opacity-[0.03] md:opacity-[0.05] select-none z-0">
-          <div className="flex whitespace-nowrap animate-marquee-slow text-[6rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter">
-            <span>AETHER CODE &nbsp; WEB &nbsp; UI/UX &nbsp; VIDEO &nbsp; INNOVATION &nbsp;</span>
-            <span>AETHER CODE &nbsp; WEB &nbsp; UI/UX &nbsp; VIDEO &nbsp; INNOVATION &nbsp;</span>
+          <div className="absolute inset-0 flex flex-col justify-center gap-6 md:gap-16 pointer-events-none opacity-[0.03] md:opacity-[0.04] select-none z-0 overflow-hidden">
+            <div className="flex whitespace-nowrap animate-marquee-slow text-[5rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter text-slate-900">
+              <span>AETHER CODE &nbsp; WEB &nbsp; UI/UX &nbsp; VIDEO &nbsp; INNOVATION &nbsp;</span>
+              <span>AETHER CODE &nbsp; WEB &nbsp; UI/UX &nbsp; VIDEO &nbsp; INNOVATION &nbsp;</span>
+            </div>
+            <div className="flex whitespace-nowrap animate-marquee-reverse-slow text-[5rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter text-slate-900">
+              <span> &nbsp; CREATIVE &nbsp; STUDIO &nbsp; DIGITAL &nbsp; IMPACT &nbsp;</span>
+              <span> &nbsp; CREATIVE &nbsp; STUDIO &nbsp; DIGITAL &nbsp; IMPACT &nbsp;</span>
+            </div>
           </div>
-          <div className="flex whitespace-nowrap animate-marquee-reverse-slow text-[6rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter mt-[-1rem] md:mt-[-4rem]">
-            <span> &nbsp; CREATIVE &nbsp; STUDIO &nbsp; DIGITAL &nbsp; IMPACT &nbsp;</span>
-            <span> &nbsp; CREATIVE &nbsp; STUDIO &nbsp; DIGITAL &nbsp; IMPACT &nbsp;</span>
-          </div>
-        </div>
 
-        {/* BLUR DECORATION */}
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 md:w-96 md:h-96 bg-brand-400/20 rounded-full blur-[80px] md:blur-[120px] -z-10 animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[600px] md:h-[600px] bg-brand-400/20 rounded-full blur-[90px] md:blur-[150px] -z-10 animate-pulse"></div>
 
-        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10">
-          <div className="flex flex-col items-center text-center">
-
-            {/* BADGE */}
-            <div className="mb-8 md:mb-10" data-aos="fade-down">
-              <div className="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-slate-50 border border-slate-200 shadow-sm transition-all hover:border-brand-400 cursor-default">
-                <span className="relative flex h-2 w-2">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 flex flex-col items-center text-center">
+            <div className="mb-6 md:mb-10">
+              <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white border border-slate-200 shadow-sm cursor-default">
+                <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-600"></span>
+                  <span className="relative inline-flex rounded-full h-full w-full bg-brand-600"></span>
                 </span>
-                <span className="text-[10px] md:text-[11px] font-black text-slate-500 uppercase tracking-[0.2em] md:tracking-[0.3em]">
-                  Aether Code Studio
+                <span className="text-[10px] md:text-[11px] font-black text-slate-600 uppercase tracking-[0.25em]">
+                  Official Creative Partner
                 </span>
               </div>
             </div>
 
-            {/* MAIN HEADLINE */}
-            <h1 className="text-5xl md:text-8xl lg:text-[8.5rem] font-black text-slate-900 tracking-tighter leading-[0.95] md:leading-[0.85] mb-10 flex flex-col items-center" data-aos="zoom-in">
-              <span className="block">LEVEL UP</span>
-              <span className="inline-flex items-center text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-blue-600 to-indigo-700 min-h-[1.1em] py-2">
-                {heroTyped}
-                <span className="w-[4px] md:w-[8px] h-[0.7em] bg-brand-600 ml-2 md:ml-4 animate-pulse"></span>
-              </span>
+            <h1 className="text-5xl md:text-7xl lg:text-[8.5rem] font-black text-slate-950 tracking-[-0.05em] leading-[0.95] md:leading-[0.85] mb-6 md:mb-12 flex flex-col items-center uppercase">
+              <span className="block text-slate-950 drop-shadow-sm">LEVEL UP</span>
+              <div className="inline-flex items-center min-h-[1.2em] pt-1 md:pt-2 drop-shadow-sm">
+                <Typewriter
+                  options={{
+                    strings: ['YOUR BRAND.', 'YOUR WEBSITE.', 'YOUR VISUAL.', 'YOUR CONTENT.'],
+                    autoStart: true,
+                    loop: true,
+                    delay: 75,
+                    deleteSpeed: 50,
+                    wrapperClassName: "text-blue-600 font-black tracking-[-0.06em] italic",
+                    cursorClassName: "font-light animate-pulse ml-2 text-blue-600/60"
+                  }}
+                />
+              </div>
             </h1>
 
-            {/* DESCRIPTION */}
-            <p className="text-base md:text-2xl text-slate-500 max-w-2xl font-medium leading-relaxed mb-12 px-4" data-aos="fade-up" data-aos-delay="200">
-              Kami mentransformasi visi menjadi <span className="text-slate-900 font-bold border-b-2 border-brand-400">Karya Digital</span> yang memikat hati penonton dan memudahkan pengguna.
+            <p className="text-base md:text-2xl lg:text-3xl text-slate-500 max-w-3xl font-bold leading-relaxed mb-8 md:mb-14 px-2 md:px-4">
+              Kami mentransformasi visi menjadi <span className="text-slate-900 font-black border-b-[3px] md:border-b-[4px] border-brand-400/50 pb-1">Karya Digital</span> presisi yang memikat audiens dan mendongkrak performa bisnis.
             </p>
 
-            {/* CTA BUTTON */}
-            <div className="flex flex-col sm:flex-row items-center gap-6" data-aos="fade-up" data-aos-delay="400">
-              <Link href="/contact" className="group relative px-10 py-5 md:px-14 md:py-6 bg-slate-900 text-white font-bold rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl transition-all duration-500 hover:shadow-brand-500/40 hover:-translate-y-1.5 active:scale-95">
+            <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
+              <Link href="/contact" className="group relative px-8 py-4 md:px-14 md:py-6 bg-slate-950 text-white font-black uppercase text-sm md:text-base tracking-widest rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl md:shadow-2xl transition-all duration-500 hover:shadow-brand-500/40 hover:-translate-y-1 active:scale-95">
                 <div className="absolute inset-0 bg-brand-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
-                <span className="relative z-10 flex items-center gap-4 text-lg md:text-xl tracking-tight">
+                <span className="relative z-10 flex items-center gap-3 md:gap-4">
                   Mulai Kolaborasi
-                  <svg className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  <svg className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                   </svg>
                 </span>
               </Link>
             </div>
+          </div>
+        </div>
 
-            {/* MOCKUP PREVIEW */}
-            <div className="mt-24 md:mt-32 relative w-full max-w-5xl" data-aos="fade-up" data-aos-delay="600">
-              <div className="bg-white rounded-[2rem] md:rounded-[3rem] p-2 md:p-4 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.15)] border border-slate-100 overflow-hidden">
-                <div className="aspect-video bg-slate-50 rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden relative group">
-                  <img src="/innovate-os.png" alt="Creative Space" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                </div>
-              </div>
+        <div className="w-full max-w-[100rem] mx-auto relative z-20 mt-10 lg:mt-auto pb-10 lg:pb-16 px-4 md:px-10">
+          <div className="text-center mb-6 md:mb-8">
+            <p className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
+              Klik Ikon Untuk Membuka Dokumentasi Resmi
+            </p>
+          </div>
 
-              {/* FLOATING ICONS (HIDDEN ON SMALL MOBILE OR SCALED) */}
-              <div className="absolute -top-6 -right-2 md:-top-12 md:-right-6 w-16 h-16 md:w-24 md:h-24 bg-white rounded-xl md:rounded-[2rem] shadow-2xl flex items-center justify-center text-2xl md:text-4xl animate-float border border-slate-50">🎬</div>
-              <div className="absolute -bottom-4 -left-2 md:-bottom-8 md:-left-8 w-16 h-16 md:w-24 md:h-24 bg-white rounded-xl md:rounded-[2rem] shadow-2xl flex items-center justify-center text-2xl md:text-4xl animate-float border border-slate-50" style={{ animationDelay: '2s' }}>💎</div>
+          <div className="relative overflow-hidden py-2 md:py-4">
+            <div className="absolute inset-y-0 left-0 w-12 md:w-32 z-20 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+            <div className="absolute inset-y-0 right-0 w-12 md:w-32 z-20 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+
+            <div className="flex gap-4 md:gap-10 animate-marquee-slow items-center mb-4 md:mb-8 relative z-10 pl-6 md:pl-10">
+              {[...toolsRow1, ...toolsRow1].map((item, idx) => (
+                <ToolItem key={`row1-${idx}`} item={item} />
+              ))}
             </div>
 
+            <div className="flex gap-4 md:gap-10 animate-marquee-reverse-slow items-center relative z-10 pr-6 md:pr-10">
+              {[...toolsRow2, ...toolsRow2].map((item, idx) => (
+                <ToolItem key={`row2-${idx}`} item={item} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-
-      {/* MARQUEE TOOLS - RUNNING TEXT */}
-      <div className="py-6 bg-white border-b border-slate-200 overflow-hidden flex relative shadow-sm">
-        {/* Fade effect di sisi kiri dan kanan */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10"></div>
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-white to-transparent z-10"></div>
-
-        {/* Kontainer yang dianimasikan */}
-        <div className="flex animate-marquee whitespace-nowrap items-center opacity-70">
-
-          {/* SET PERTAMA */}
-          <div className="flex items-center space-x-12 px-6">
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">PREMIERE PRO</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">AFTER EFFECTS</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">HTML5 & TAILWIND</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">FIGMA UI/UX</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">CAPCUT PRO</span>
-            <span className="text-slate-200">&bull;</span>
-          </div>
-
-          {/* SET KEDUA (Duplikat persis untuk efek seamless) */}
-          <div className="flex items-center space-x-12 px-6">
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">PREMIERE PRO</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">AFTER EFFECTS</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">HTML5 & TAILWIND</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">FIGMA UI/UX</span>
-            <span className="text-slate-200">&bull;</span>
-            <span className="text-xl font-extrabold text-slate-300 uppercase tracking-widest">CAPCUT PRO</span>
-            <span className="text-slate-200">&bull;</span>
-          </div>
-
-        </div>
-      </div>
-
       {/* ABOUT SECTION */}
-      {/* SECTION: ABOUT - CLEAN COMMUNITY VERSION */}
-      <section id="about" className="py-32 bg-white relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
-        {/* Latar Belakang - Hanya Glow Halus Tanpa Kotak-kotak */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-brand-100/30 rounded-full blur-[120px] -z-10 animate-float"></div>
+      <section id="about" className="py-20 md:py-32 bg-white relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
 
-            {/* Kiri: Visual Logo Centerpiece */}
-            <div className="relative group" data-aos="fade-right">
-              <div className="relative z-10 p-12 bg-slate-50 border border-slate-100 rounded-[3rem] flex items-center justify-center overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-brand-500/5">
-                {/* Efek Cahaya Fokus */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand-400/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            <div className="w-full lg:w-1/2 relative" data-aos="fade-right">
 
+              <div className="relative w-full aspect-square sm:aspect-video lg:aspect-square bg-slate-50 border border-slate-100 rounded-[2rem] flex items-center justify-center overflow-hidden group">
+                <div className="absolute inset-0 bg-gradient-to-tr from-brand-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <img
                   src="/logo.png"
                   alt="AETHER CODE Logo"
-                  className="w-full h-auto object-contain max-w-[340px] relative z-10 transform group-hover:scale-105 group-hover:rotate-2 transition-transform duration-700"
+                  className="w-1/2 max-w-[180px] md:max-w-[220px] object-contain transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
 
-              {/* Floating Card - Core Philosophy */}
-              <div className="absolute -bottom-6 -right-6 p-8 bg-slate-900 text-white rounded-[2.5rem] shadow-2xl z-20 max-w-[260px] border border-slate-800" data-aos="zoom-in" data-aos-delay="300">
-                <div className="w-8 h-1 bg-brand-500 mb-4 rounded-full"></div>
-                <p className="text-sm font-bold leading-relaxed text-slate-200 uppercase tracking-tight">
+              <div className="relative mt-6 sm:mt-0 sm:absolute sm:-bottom-8 sm:-right-8 p-6 md:p-8 bg-slate-950 text-white rounded-2xl md:rounded-[2rem] shadow-xl w-full sm:w-[320px] border border-slate-800" data-aos="fade-up" data-aos-delay="200">
+                <div className="w-8 h-1 bg-brand-500 mb-5 rounded-full"></div>
+                <p className="text-xs md:text-sm font-bold leading-relaxed text-slate-200 uppercase tracking-widest">
                   Mendorong batasan logika untuk menciptakan dampak digital nyata.
                 </p>
               </div>
+
             </div>
 
-            {/* Kanan: Content & Mission */}
-            <div className="space-y-12" data-aos="fade-left">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-brand-600 font-black tracking-[0.5em] uppercase text-[10px]">Eksosistem IT</span>
-                </div>
-                <h3 className="text-5xl md:text-7xl font-[900] text-slate-900 tracking-tighter leading-[0.9] uppercase">
-                  LEBIH DARI <br /> <span className="text-transparent" style={{ WebkitTextStroke: '1.5px #0f172a' }}>KOMUNITAS.</span>
-                </h3>
-                <p className="mt-8 text-xl text-slate-500 font-bold leading-relaxed">
-                  AETHER CODE adalah wadah kolaboratif bagi para pengembang, desainer, dan inovator muda untuk tumbuh bersama.
-                </p>
+            <div className="w-full lg:w-1/2 flex flex-col" data-aos="fade-left">
+
+              <div className="flex items-center gap-4 mb-6 md:mb-8">
+                <span className="w-6 h-[2px] bg-brand-600"></span>
+                <span className="text-brand-600 font-black tracking-[0.4em] uppercase text-[10px] md:text-xs">Ekosistem IT</span>
               </div>
 
-              {/* Filosofi Singkat */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:border-brand-500/20">
-                  <span className="text-3xl mb-4 block">🚀</span>
-                  <h4 className="text-lg font-[900] text-slate-900 mb-2 uppercase tracking-tight">Visi Sinergi</h4>
-                  <p className="text-xs text-slate-500 font-bold leading-relaxed">Menyatukan berbagai potensi teknologi dalam satu jaringan yang solid dan terintegrasi.</p>
+              <h3 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-950 tracking-[-0.03em] leading-[0.95] uppercase mb-6 md:mb-8">
+                LEBIH DARI <br />
+                <span className="text-transparent" style={{ WebkitTextStroke: '1px #0f172a' }}>KOMUNITAS.</span>
+              </h3>
+
+              <p className="text-base md:text-lg text-slate-500 font-bold leading-relaxed mb-10 md:mb-12">
+                AETHER CODE adalah wadah kolaboratif bagi para pengembang, desainer, dan inovator muda untuk tumbuh bersama.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-12">
+
+                <div className="p-6 md:p-8 bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-brand-200 group">
+                  <span className="inline-block px-3 py-1.5 bg-slate-50 text-slate-500 text-[9px] font-black uppercase tracking-widest rounded-md mb-4 border border-slate-100 transition-colors group-hover:bg-brand-50 group-hover:text-brand-600 group-hover:border-brand-100">
+                    Visi Sinergi
+                  </span>
+                  <p className="text-xs text-slate-500 font-bold leading-relaxed">
+                    Menyatukan potensi teknologi dalam satu jaringan solid dan terintegrasi.
+                  </p>
                 </div>
-                <div className="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 transition-all hover:bg-white hover:shadow-xl hover:border-brand-500/20">
-                  <span className="text-3xl mb-4 block">💡</span>
-                  <h4 className="text-lg font-[900] text-slate-900 mb-2 uppercase tracking-tight">Inovasi Terukur</h4>
-                  <p className="text-xs text-slate-500 font-bold leading-relaxed">Fokus pada hasil karya yang tidak hanya fungsional secara teknis, tapi juga estetis.</p>
+
+                <div className="p-6 md:p-8 bg-white rounded-2xl border border-slate-100 shadow-sm transition-all duration-300 hover:shadow-lg hover:border-brand-200 group">
+                  <span className="inline-block px-3 py-1.5 bg-slate-50 text-slate-500 text-[9px] font-black uppercase tracking-widest rounded-md mb-4 border border-slate-100 transition-colors group-hover:bg-brand-50 group-hover:text-brand-600 group-hover:border-brand-100">
+                    Inovasi Terukur
+                  </span>
+                  <p className="text-xs text-slate-500 font-bold leading-relaxed">
+                    Fokus pada hasil karya yang fungsional secara teknis dan estetis.
+                  </p>
                 </div>
+
               </div>
 
-              {/* List Poin Identitas */}
-              <div className="space-y-4 pt-6 border-t border-slate-100">
+              <div className="flex flex-col gap-4">
                 {[
                   "Pusat Pengembangan Talenta Digital",
                   "Kolaborasi Projek Lintas Disiplin",
                   "Membangun Standar Baru Inovasi"
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-4 group">
-                    <div className="w-2 h-2 rounded-full bg-brand-600 group-hover:scale-150 transition-transform"></div>
-                    <span className="text-sm font-black text-slate-800 uppercase tracking-tighter transition-colors group-hover:text-brand-600">{item}</span>
+                  <div key={idx} className="flex items-center gap-4 group w-fit cursor-default">
+                    <div className="w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-brand-600 group-hover:scale-150 transition-all duration-300"></div>
+                    <span className="text-xs md:text-sm font-black text-slate-600 uppercase tracking-widest transition-colors duration-300 group-hover:text-slate-950">
+                      {item}
+                    </span>
                   </div>
                 ))}
               </div>
+
             </div>
 
           </div>
@@ -230,113 +264,144 @@ export default function Home() {
       </section>
 
       {/* SERVICES SECTION */}
-      <section id="services" className="py-32 bg-white relative overflow-hidden border-t border-slate-100">
+      <section id="services" className="py-24 lg:py-32 bg-slate-50/50 relative overflow-hidden border-y border-slate-100">
+        <div className="absolute inset-0 z-0 opacity-[0.5] pointer-events-none bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:40px_40px]"></div>
 
-        {/* BACKGROUND DECORATION - KOTAK-KOTAK MINIMALIS */}
-        <div className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
-          style={{ backgroundImage: `linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)`, backgroundSize: '80px 80px' }}>
-        </div>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-100/30 rounded-full blur-[120px] -z-10"></div>
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-100/20 rounded-full blur-[120px] -z-10 animate-pulse"></div>
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-indigo-100/20 rounded-full blur-[120px] -z-10"></div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 font-['Plus_Jakarta_Sans',sans-serif]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 font-['Plus_Jakarta_Sans',sans-serif]">
 
-          {/* Header Section */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-24 gap-8" data-aos="fade-up">
-            <div className="max-w-2xl">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="w-8 h-[3px] bg-brand-600 rounded-full"></span>
-                <span className="text-brand-600 font-extrabold tracking-[0.4em] uppercase text-[10px]">Ekspertise Kami</span>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.6 }}
+            className="flex flex-col lg:flex-row lg:items-end justify-between mb-20 md:mb-24 gap-10"
+          >
+            <div className="max-w-3xl">
+              <div className="flex items-center gap-4 mb-6">
+                <span className="w-10 h-[2px] bg-blue-600"></span>
+                <span className="text-blue-600 font-black tracking-[0.4em] uppercase text-[10px] md:text-xs">Ekspertise Kami</span>
               </div>
-              <h3 className="text-6xl md:text-8xl font-[900] text-slate-900 tracking-tighter leading-[0.85] uppercase italic">
-                Layanan <br /> <span className="text-transparent" style={{ WebkitTextStroke: '2px #0ea5e9' }}>Unggulan.</span>
+              <h3 className="text-5xl md:text-7xl lg:text-[5.5rem] font-black text-slate-950 tracking-[-0.04em] leading-[0.9] uppercase italic">
+                Layanan <br />
+                <span className="text-transparent" style={{ WebkitTextStroke: '1.5px #0f172a' }}>Unggulan.</span>
               </h3>
             </div>
-            <p className="text-slate-500 font-bold text-sm max-w-[280px] leading-relaxed border-l-4 border-brand-500 pl-6 py-2">
-              Solusi modern dengan standar industri global untuk transformasi digital bisnis Anda.
-            </p>
-          </div>
+            <div className="lg:mb-4">
+              <p className="text-slate-500 font-bold text-base md:text-lg max-w-[320px] leading-relaxed border-l-[3px] border-blue-600 pl-6 py-1">
+                Solusi digital presisi dengan standar industri global untuk eskalasi bisnis Anda.
+              </p>
+            </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
-              { title: "Web Development", icon: "🌐", tag: "TECH", href: "/jasa-web", desc: "Website kustom, Landing Page, hingga Web Apps yang responsif dan super cepat." },
-              { title: "UI/UX Design", icon: "💎", tag: "DESIGN", href: "/jasa-uiux", desc: "Antarmuka modern dengan pengalaman pengguna yang intuitif dan interaktif di Figma." },
-              { title: "Video Production", icon: "🎬", tag: "MEDIA", href: "/jasa-video", desc: "Editing konten cinematic untuk brand awareness, reels, hingga iklan produk premium." },
-              { title: "PPT Presentation", icon: "📊", tag: "BUSINESS", href: "/jasa-ppt", desc: "Slide premium untuk kebutuhan pitching investor, seminar, dan presentasi bisnis." },
-              { title: "Document Service", icon: "📄", tag: "ADMIN", href: "/jasa-dokumen", desc: "Pengolahan data, penulisan laporan, dan administrasi dokumen profesional." }
+              {
+                title: "Web Development", tag: "TECH", href: "/jasa-web", desc: "Website kustom, Landing Page, hingga Web Apps yang responsif dan super cepat.", icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9-9H3m9 9a9 9 0 01-9-9m9 9c0 6.903-5.097 12.5-11.375 12.5M3 12h18"></path></svg>
+                )
+              },
+              {
+                title: "UI/UX Design", tag: "DESIGN", href: "/jasa-uiux", desc: "Antarmuka modern dengan pengalaman pengguna yang intuitif dan interaktif di Figma.", icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                )
+              },
+              {
+                title: "Video Production", tag: "MEDIA", href: "/jasa-video", desc: "Editing konten cinematic untuk brand awareness, reels, hingga iklan produk premium.", icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                )
+              },
+              {
+                title: "PPT Presentation", tag: "BUSINESS", href: "/jasa-ppt", desc: "Slide premium untuk kebutuhan pitching investor, seminar, dan presentasi bisnis.", icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 17v-2m3 2v-4m3 2v-6m-8 13h10a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                )
+              },
+              {
+                title: "Document Service", tag: "ADMIN", href: "/jasa-dokumen", desc: "Pengolahan data, penulisan laporan, dan administrasi dokumen profesional.", icon: (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                )
+              }
             ].map((s, i) => (
-              <Link
-                href={s.href}
+              <motion.div
                 key={i}
-                className="group relative bg-white p-10 rounded-[2rem] border border-slate-100 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_50px_-15px_rgba(14,165,233,0.2)] hover:border-brand-500/30 transition-all duration-500 transform hover:-translate-y-2 overflow-hidden flex flex-col justify-between h-full"
-                data-aos="fade-up"
-                data-aos-delay={i * 50}
+                initial={{ opacity: 0, scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{
+                  duration: 0.5,
+                  delay: i * 0.1,
+                  ease: [0.215, 0.61, 0.355, 1]
+                }}
+                className="h-full"
               >
-                {/* Hover Glow Effect */}
-                <div className="absolute -top-24 -right-24 w-48 h-48 bg-brand-500/5 rounded-full blur-3xl group-hover:bg-brand-500/10 transition-all duration-500"></div>
+                <Link
+                  href={s.href}
+                  className="group relative bg-white p-8 md:p-10 rounded-[2rem] border border-slate-100 shadow-[0_10px_30px_rgb(0,0,0,0.02)] hover:shadow-[0_30px_60px_-15px_rgba(37,99,235,0.1)] hover:border-blue-200 transition-all duration-500 flex flex-col justify-between h-full overflow-hidden"
+                >
+                  <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:opacity-[0.06] transition-opacity">
+                    <span className="text-7xl font-black text-slate-900 tracking-tighter italic">0{i + 1}</span>
+                  </div>
 
-                <div>
-                  <div className="flex justify-between items-center mb-12">
-                    <div className="w-14 h-14 bg-slate-50 text-brand-600 rounded-2xl flex items-center justify-center text-3xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-sm border border-slate-100">
+                  <div className="relative z-10">
+                    <div className="w-14 h-14 bg-slate-50 text-blue-600 rounded-2xl flex items-center justify-center mb-10 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500 shadow-sm border border-slate-100 group-hover:border-blue-600">
                       {s.icon}
                     </div>
-                    <span className="text-[10px] font-black text-slate-300 tracking-[0.3em] group-hover:text-brand-500 transition-colors uppercase">
-                      0{i + 1}
-                    </span>
+
+                    <h4 className="text-2xl font-black text-slate-950 mb-4 uppercase tracking-tight leading-tight">
+                      {s.title}
+                    </h4>
+                    <p className="text-slate-500 text-sm leading-relaxed font-bold">
+                      {s.desc}
+                    </p>
                   </div>
 
-                  <h4 className="text-2xl font-[900] text-slate-900 mb-4 uppercase tracking-tight leading-tight transition-all">
-                    {s.title}
-                  </h4>
-                  <p className="text-slate-500 text-sm leading-relaxed font-medium mb-12">
-                    {s.desc}
-                  </p>
-                </div>
-
-                {/* Bottom Action Area */}
-                <div className="flex items-center justify-between border-t border-slate-50 pt-8 mt-auto">
-                  <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-black text-slate-400 group-hover:text-slate-900 uppercase tracking-widest transition-all">Lihat Detail</span>
-                    <div className="w-0 h-[2px] bg-brand-600 group-hover:w-12 transition-all duration-500"></div>
+                  <div className="relative z-10 flex items-center justify-between mt-12 pt-6 border-t border-slate-50">
+                    <span className="text-[10px] font-black text-slate-400 group-hover:text-blue-600 uppercase tracking-widest transition-colors">Lihat Detail</span>
+                    <div className="w-8 h-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
                   </div>
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center group-hover:bg-brand-600 group-hover:text-white transition-all duration-500 shadow-sm">
-                    <svg className="w-4 h-4 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                    </svg>
-                  </div>
-                </div>
-              </Link>
+                </Link>
+              </motion.div>
             ))}
 
-            {/* CUSTOM CTA CARD - DARK THEME */}
-            <Link href="/contact" className="bg-slate-950 p-10 rounded-[2rem] flex flex-col justify-between items-start relative group overflow-hidden border border-slate-800 shadow-2xl hover:border-brand-500 transition-all duration-500 transform hover:-translate-y-2" data-aos="fade-up">
-              <div className="relative z-10 h-full flex flex-col justify-between">
-                <div>
-                  <h4 className="text-3xl font-[900] text-white mb-4 uppercase tracking-tight italic">
-                    Projek <br /> <span className="text-brand-500 underline underline-offset-8 decoration-2">Khusus?</span>
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Link href="/contact" className="group relative bg-slate-950 p-8 md:p-10 rounded-[2rem] border border-slate-900 shadow-2xl hover:border-blue-500 transition-all duration-500 flex flex-col justify-between overflow-hidden min-h-[320px] h-full">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                <div className="relative z-10">
+                  <div className="inline-block px-3 py-1 bg-blue-600 text-[9px] font-black text-white uppercase tracking-widest rounded-md mb-6">
+                    Custom Project
+                  </div>
+                  <h4 className="text-3xl md:text-4xl font-black text-white mb-4 uppercase tracking-tighter italic leading-none">
+                    Projek <br /> <span className="text-blue-500">Khusus?</span>
                   </h4>
-                  <p className="text-slate-400 text-sm font-medium leading-relaxed">Punya ide gila? Diskusikan langsung dengan tim expert kami untuk solusi custom.</p>
+                  <p className="text-slate-400 text-sm font-bold leading-relaxed max-w-[220px]">Diskusikan ide gila Anda langsung dengan tim expert kami.</p>
                 </div>
 
-                <div className="mt-12 flex items-center gap-4 w-full">
-                  <span className="flex-1 py-4 bg-brand-600 text-white font-black uppercase tracking-[0.2em] text-[10px] text-center rounded-xl group-hover:bg-white group-hover:text-slate-900 transition-all duration-500">
+                <div className="relative z-10 mt-8 flex items-center gap-3">
+                  <div className="flex-1 py-4 bg-white text-slate-950 font-black uppercase tracking-widest text-[10px] text-center rounded-xl group-hover:bg-blue-600 group-hover:text-white transition-all duration-500">
                     HUBUNGI KAMI
-                  </span>
-                  <div className="w-12 h-12 rounded-xl border border-slate-800 flex items-center justify-center text-white group-hover:bg-white group-hover:text-slate-900 transition-all">
+                  </div>
+                  <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-white group-hover:border-blue-500 transition-all">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 4v16m8-8H4"></path></svg>
                   </div>
                 </div>
-              </div>
-
-              {/* Background Dekorasi */}
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-brand-600/10 blur-[80px] group-hover:bg-brand-600/20 transition-all"></div>
-            </Link>
+              </Link>
+            </motion.div>
 
           </div>
         </div>
       </section>
 
       {/* ACADEMY SECTION */}
-      {/* SECTION: ACADEMY - FULL RESPONSIVE FIX */}
       <section id="academy" className="py-24 md:py-40 bg-[#020617] relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
 
         {/* Background Glow */}
