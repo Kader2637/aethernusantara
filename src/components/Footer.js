@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
             </div>
             <span className="tracking-[0.2em] uppercase text-[9px] font-black text-slate-600 italic">
-              Build v.02 • Stable
+              Build v.01 • Stable
             </span>
           </div>
         </div>
