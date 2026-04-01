@@ -88,24 +88,24 @@ export default function Home() {
   return (
     <main>
       {/* HERO SECTION */}
-      <section id="home" className="relative flex flex-col items-center bg-white overflow-x-hidden min-h-fit lg:min-h-screen">
-        <div className="relative w-full flex-none lg:flex-1 flex flex-col items-center justify-start lg:justify-center pt-24 pb-0 lg:pt-0 lg:pb-0 lg:min-h-screen z-10">
+      <section id="home" className="relative flex flex-col items-center bg-white overflow-x-hidden min-h-[100dvh] w-full pt-32 sm:pt-40 lg:pt-48 pb-12 lg:pb-16">
+        <div className="relative w-full flex-1 flex flex-col items-center justify-center z-10">
 
           <div className="absolute inset-0 flex flex-col justify-center gap-6 md:gap-16 pointer-events-none opacity-[0.03] md:opacity-[0.04] select-none z-0 overflow-hidden">
-            <div className="flex whitespace-nowrap animate-marquee-slow text-[5rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter text-slate-900">
+            <div className="flex whitespace-nowrap animate-marquee-slow text-[4rem] sm:text-[8rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter text-slate-900">
               <span>AETHER CODE &nbsp; WEB &nbsp; UI/UX &nbsp; VIDEO &nbsp; INNOVATION &nbsp;</span>
               <span>AETHER CODE &nbsp; WEB &nbsp; UI/UX &nbsp; VIDEO &nbsp; INNOVATION &nbsp;</span>
             </div>
-            <div className="flex whitespace-nowrap animate-marquee-reverse-slow text-[5rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter text-slate-900">
+            <div className="flex whitespace-nowrap animate-marquee-reverse-slow text-[4rem] sm:text-[8rem] md:text-[15rem] font-black uppercase leading-none tracking-tighter text-slate-900">
               <span> &nbsp; CREATIVE &nbsp; STUDIO &nbsp; DIGITAL &nbsp; IMPACT &nbsp;</span>
               <span> &nbsp; CREATIVE &nbsp; STUDIO &nbsp; DIGITAL &nbsp; IMPACT &nbsp;</span>
             </div>
           </div>
 
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[600px] md:h-[600px] bg-brand-400/20 rounded-full blur-[90px] md:blur-[150px] -z-10 animate-pulse"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] md:w-[600px] md:h-[600px] bg-brand-400/20 rounded-full blur-[80px] md:blur-[150px] -z-10 animate-pulse"></div>
 
-          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-10 flex flex-col items-center text-center">
-            <div className="mb-6 md:mb-10">
+          <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full relative z-20 flex flex-col items-center text-center">
+            <div className="mb-8 md:mb-10">
               <div className="inline-flex items-center gap-3 px-4 py-2 md:px-5 md:py-2.5 rounded-full bg-white border border-slate-200 shadow-sm cursor-default">
                 <span className="relative flex h-2 w-2 md:h-2.5 md:w-2.5">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
@@ -117,9 +117,9 @@ export default function Home() {
               </div>
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-[8.5rem] font-black text-slate-950 tracking-[-0.05em] leading-[0.95] md:leading-[0.85] mb-6 md:mb-12 flex flex-col items-center uppercase">
-              <span className="block text-slate-950 drop-shadow-sm">LEVEL UP</span>
-              <div className="inline-flex items-center min-h-[1.2em] pt-1 md:pt-2 drop-shadow-sm">
+            <h1 className="text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[8.5rem] font-black text-slate-950 tracking-[-0.05em] leading-[1.1] md:leading-[0.85] mb-8 md:mb-12 flex flex-col items-center uppercase">
+              <span className="block drop-shadow-sm">LEVEL UP</span>
+              <div className="inline-flex items-center min-h-[1.2em] pt-1 md:pt-2 drop-shadow-sm text-blue-600 italic">
                 <Typewriter
                   options={{
                     strings: ['YOUR BRAND.', 'YOUR WEBSITE.', 'YOUR VISUAL.', 'YOUR CONTENT.'],
@@ -127,19 +127,19 @@ export default function Home() {
                     loop: true,
                     delay: 75,
                     deleteSpeed: 50,
-                    wrapperClassName: "text-blue-600 font-black tracking-[-0.06em] italic",
-                    cursorClassName: "font-light animate-pulse ml-2 text-blue-600/60"
+                    wrapperClassName: "font-black tracking-[-0.06em]",
+                    cursorClassName: "font-light animate-pulse ml-1 md:ml-2 text-blue-600/60"
                   }}
                 />
               </div>
             </h1>
 
-            <p className="text-base md:text-2xl lg:text-3xl text-slate-500 max-w-3xl font-bold leading-relaxed mb-8 md:mb-14 px-2 md:px-4">
+            <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl text-slate-500 max-w-xs sm:max-w-2xl md:max-w-3xl font-bold leading-relaxed mb-10 md:mb-14 px-2">
               Kami mentransformasi visi menjadi <span className="text-slate-900 font-black border-b-[3px] md:border-b-[4px] border-brand-400/50 pb-1">Karya Digital</span> presisi yang memikat audiens dan mendongkrak performa bisnis.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-4 md:gap-6">
-              <Link href="/contact" className="group relative px-8 py-4 md:px-14 md:py-6 bg-slate-950 text-white font-black uppercase text-sm md:text-base tracking-widest rounded-2xl md:rounded-[2rem] overflow-hidden shadow-xl md:shadow-2xl transition-all duration-500 hover:shadow-brand-500/40 hover:-translate-y-1 active:scale-95">
+              <Link href="/contact" className="group relative px-8 py-4 md:px-14 md:py-6 bg-slate-950 text-white font-black uppercase text-xs md:text-base tracking-widest rounded-xl md:rounded-[2rem] overflow-hidden shadow-xl transition-all duration-500 hover:shadow-brand-500/40 hover:-translate-y-1 active:scale-95">
                 <div className="absolute inset-0 bg-brand-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
                 <span className="relative z-10 flex items-center gap-3 md:gap-4">
                   Mulai Kolaborasi
@@ -152,7 +152,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-full max-w-[100rem] mx-auto relative z-20 mt-10 lg:mt-auto pb-10 lg:pb-16 px-4 md:px-10">
+        <div className="w-full max-w-[100rem] mx-auto relative z-20 mt-10 pt-5 lg:mt-auto px-4 md:px-10">
           <div className="text-center mb-6 md:mb-8">
             <p className="text-[9px] md:text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">
               Klik Ikon Untuk Membuka Dokumentasi Resmi
@@ -160,8 +160,8 @@ export default function Home() {
           </div>
 
           <div className="relative overflow-hidden py-2 md:py-4">
-            <div className="absolute inset-y-0 left-0 w-12 md:w-32 z-20 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
-            <div className="absolute inset-y-0 right-0 w-12 md:w-32 z-20 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 z-20 pointer-events-none bg-gradient-to-r from-white to-transparent"></div>
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 z-20 pointer-events-none bg-gradient-to-l from-white to-transparent"></div>
 
             <div className="flex gap-4 md:gap-10 animate-marquee-slow items-center mb-4 md:mb-8 relative z-10 pl-6 md:pl-10">
               {[...toolsRow1, ...toolsRow1].map((item, idx) => (
