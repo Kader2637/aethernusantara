@@ -13,7 +13,7 @@ export default function Footer() {
           
           <div className="flex flex-col items-center md:items-start gap-2">
             <Link href="/" className="flex items-center gap-3 group">
-              <img src="/logo.png" alt="Logo" className="w-8 h-8 opacity-90 group-hover:opacity-100 transition-opacity" />
+              <img src="/logo.png" alt="Logo" className="w-10 h-12 opacity-90 group-hover:opacity-100 transition-opacity" />
               <span className="text-xl font- tracking-tighter text-slate-900 uppercase">
                 AETHER<span className="text-brand-600">&nbsp;&nbsp;NUSANTARA</span>
               </span>
