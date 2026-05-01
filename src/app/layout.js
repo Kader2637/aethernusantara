@@ -31,8 +31,71 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aether Nusantara",
+    "url": "https://aethernusantara.web.id",
+    "logo": "https://aethernusantara.web.id/logo.png",
+    "description": "Ekosistem Inovasi Digital. Kami meramu baris kode menjadi mahakarya visual. Spesialis Web Dev, UI/UX Design, dan Video Production.",
+    "founder": {
+      "@type": "Person",
+      "name": "Abdul Kader",
+      "jobTitle": "Fullstack Dev & Arsitek Utama (Owner)"
+    },
+    "founder": [
+      {
+        "@type": "Person",
+        "name": "Ezequiel A.",
+        "jobTitle": "Junior Dev (Owner)"
+      },
+      {
+        "@type": "Person",
+        "name": "Rio Andhika",
+        "jobTitle": "UI/UX & Frontend (Owner)"
+      },
+      {
+        "@type": "Person",
+        "name": "Viktorinus D.",
+        "jobTitle": "Marketing & Admin (Owner)"
+      }
+    ],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web Development",
+          "description": "Undangan Digital, Landing Page, Web Portfolio, Company Profile, Web Katalog, Blog & Artikel, E-Commerce, Sistem Reservasi, Web App Dashboard"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "UI/UX Design",
+          "description": "Jasa Desain UI/UX & Interaksi Modern"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Video Production",
+          "description": "Jasa Video Production & Editing Cinematic"
+        }
+      }
+    ]
+  };
+
   return (
     <html lang="id" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${jakarta.className} antialiased bg-white`}>
         <Navbar />
         <main>{children}</main>

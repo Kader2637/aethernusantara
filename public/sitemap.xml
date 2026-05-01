@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
-        xmlns:pagemap="http://www.google.com/schemas/sitemap-pagemap/1.0">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   
   <url>
     <loc>https://aethernusantara.web.id/</loc>
@@ -28,13 +27,6 @@
       <image:loc>https://aethernusantara.web.id/project/itdevsolutions.png</image:loc>
       <image:title>IT Solutions</image:title>
     </image:image>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="organization">
-        <pagemap:Attribute name="name">Aether Nusantara</pagemap:Attribute>
-        <pagemap:Attribute name="description">Creative Studio, Web Development, UI/UX, Video Production</pagemap:Attribute>
-        <pagemap:Attribute name="leader">Abdul Kader</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
   <url>
@@ -46,14 +38,6 @@
       <image:loc>https://aethernusantara.web.id/logo.png</image:loc>
       <image:title>Aether Nusantara Logo</image:title>
     </image:image>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="team">
-        <pagemap:Attribute name="founder_ketua">Abdul Kader (Fullstack Dev &amp; (Owner))</pagemap:Attribute>
-        <pagemap:Attribute name="anggota_1">Ezequiel A. (Junior Dev &amp; (Owner))</pagemap:Attribute>
-        <pagemap:Attribute name="anggota_2">Rio Andhika (UI/UX &amp; Frontend &amp; (Owner))</pagemap:Attribute>
-        <pagemap:Attribute name="anggota_3">Viktorinus D. (Marketing &amp; Admin &amp; (Owner))</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
   <url>
@@ -105,13 +89,6 @@
     <lastmod>2026-05-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="service">
-        <pagemap:Attribute name="kategori">Jasa Pembuatan Website Modern</pagemap:Attribute>
-        <pagemap:Attribute name="layanan">Undangan Digital, Landing Page, Web Portfolio, Company Profile, Web Katalog, Blog &amp; Artikel, E-Commerce, Sistem Reservasi, Web App Dashboard</pagemap:Attribute>
-        <pagemap:Attribute name="lead_developer">Abdul Kader</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
   <url>
@@ -119,13 +96,6 @@
     <lastmod>2026-05-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="service">
-        <pagemap:Attribute name="kategori">Jasa Desain UI/UX &amp; Interaksi Modern</pagemap:Attribute>
-        <pagemap:Attribute name="lead_designer">Rio Andhika</pagemap:Attribute>
-        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
   <url>
@@ -133,13 +103,6 @@
     <lastmod>2026-05-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="service">
-        <pagemap:Attribute name="kategori">Jasa Video Production &amp; Editing Cinematic</pagemap:Attribute>
-        <pagemap:Attribute name="lead_editor">Viktorinus D.</pagemap:Attribute>
-        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
   <url>
@@ -147,12 +110,6 @@
     <lastmod>2026-05-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="service">
-        <pagemap:Attribute name="kategori">Jasa Pengolahan Data &amp; Dokumen</pagemap:Attribute>
-        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
   <url>
@@ -160,12 +117,6 @@
     <lastmod>2026-05-01T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <pagemap:PageMap>
-      <pagemap:DataObject type="service">
-        <pagemap:Attribute name="kategori">Jasa Desain Presentasi &amp; PPT Premium</pagemap:Attribute>
-        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
-      </pagemap:DataObject>
-    </pagemap:PageMap>
   </url>
 
 </urlset>
