@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" 
+        xmlns:pagemap="http://www.google.com/schemas/sitemap-pagemap/1.0">
+  
+  <url>
+    <loc>https://aethernusantara.web.id/</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/logo.png</image:loc>
+      <image:title>Aether Nusantara Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/innovateos.png</image:loc>
+      <image:title>Innovate OS</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/tanitrade.png</image:loc>
+      <image:title>Tani Trade</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/auroratravel.png</image:loc>
+      <image:title>Aurora Travel</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/itdevsolutions.png</image:loc>
+      <image:title>IT Solutions</image:title>
+    </image:image>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="organization">
+        <pagemap:Attribute name="name">Aether Nusantara</pagemap:Attribute>
+        <pagemap:Attribute name="description">Creative Studio, Web Development, UI/UX, Video Production</pagemap:Attribute>
+        <pagemap:Attribute name="leader">Abdul Kader</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/about</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/logo.png</image:loc>
+      <image:title>Aether Nusantara Logo</image:title>
+    </image:image>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="team">
+        <pagemap:Attribute name="founder_ketua">Abdul Kader (Fullstack Dev &amp; (Owner))</pagemap:Attribute>
+        <pagemap:Attribute name="anggota_1">Ezequiel A. (Junior Dev &amp; (Owner))</pagemap:Attribute>
+        <pagemap:Attribute name="anggota_2">Rio Andhika (UI/UX &amp; Frontend &amp; (Owner))</pagemap:Attribute>
+        <pagemap:Attribute name="anggota_3">Viktorinus D. (Marketing &amp; Admin &amp; (Owner))</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/portfolio</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/innovateos.png</image:loc>
+      <image:title>Innovate OS</image:title>
+      <image:caption>Platform kecerdasan lingkungan &amp; disaster simulation untuk edukasi karbon.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/tanitrade.png</image:loc>
+      <image:title>TaniTrade</image:title>
+      <image:caption>Marketplace modern yang menghubungkan rantai pasok hasil tani Indonesia.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/greenguard.png</image:loc>
+      <image:title>Green Guard</image:title>
+      <image:caption>Sistem monitoring keberlanjutan alam untuk perlindungan lingkungan digital.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/auroratravel.png</image:loc>
+      <image:title>Aurora Travel</image:title>
+      <image:caption>Website Agency Travel eksklusif dengan sistem booking terintegrasi.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/itdevsolutions.png</image:loc>
+      <image:title>IT Solutions</image:title>
+      <image:caption>Website landing page profesional untuk perusahaan IT atau Software House.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://aethernusantara.web.id/project/ecohacks.png</image:loc>
+      <image:title>EcoHacks UI</image:title>
+      <image:caption>Desain antarmuka bersih bertema lingkungan untuk event sustainability.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/contact</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/jasa/web</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="service">
+        <pagemap:Attribute name="kategori">Jasa Pembuatan Website Modern</pagemap:Attribute>
+        <pagemap:Attribute name="layanan">Undangan Digital, Landing Page, Web Portfolio, Company Profile, Web Katalog, Blog &amp; Artikel, E-Commerce, Sistem Reservasi, Web App Dashboard</pagemap:Attribute>
+        <pagemap:Attribute name="lead_developer">Abdul Kader</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/jasa/uiux</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="service">
+        <pagemap:Attribute name="kategori">Jasa Desain UI/UX &amp; Interaksi Modern</pagemap:Attribute>
+        <pagemap:Attribute name="lead_designer">Rio Andhika</pagemap:Attribute>
+        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/jasa/video</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="service">
+        <pagemap:Attribute name="kategori">Jasa Video Production &amp; Editing Cinematic</pagemap:Attribute>
+        <pagemap:Attribute name="lead_editor">Viktorinus D.</pagemap:Attribute>
+        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/jasa/dokumen</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="service">
+        <pagemap:Attribute name="kategori">Jasa Pengolahan Data &amp; Dokumen</pagemap:Attribute>
+        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+  <url>
+    <loc>https://aethernusantara.web.id/jasa/ppt</loc>
+    <lastmod>2026-05-01T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <pagemap:PageMap>
+      <pagemap:DataObject type="service">
+        <pagemap:Attribute name="kategori">Jasa Desain Presentasi &amp; PPT Premium</pagemap:Attribute>
+        <pagemap:Attribute name="manager">Abdul Kader</pagemap:Attribute>
+      </pagemap:DataObject>
+    </pagemap:PageMap>
+  </url>
+
+</urlset>
